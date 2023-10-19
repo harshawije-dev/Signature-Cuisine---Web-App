@@ -2,11 +2,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-color:#ddeac1;
+  --secondary-color:#494449;
+}
+
+
+body {
+  position: relative;
+  /* padding-top: 70px; */
 }
 
 header {
   margin: 0 auto;
-  background-color: #fc7753;
+  background-color: var(--main-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
 }
 
 nav {
@@ -15,7 +32,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  background-color: #fc7753;
+  background-color:var(--main-color);
   margin: 0 auto;
 }
 
@@ -23,7 +40,7 @@ nav {
   font-family: "Dancing Script";
   font-weight: bold;
   font-size: 40px;
-  color: aliceblue;
+  color: var(--secondary-color);
 }
 
 .nav-right-section ul {
@@ -34,11 +51,133 @@ nav {
 
 .nav-right-section ul li {
   list-style: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
 }
 
 .nav-right-section ul li a {
   text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.login-section {
+  background-color: var(--main-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.login-section a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Poppins";
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: var(--secondary-color);
+  font-size: 30px;
+}
+
+.slider {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider figure img {
+  float: left;
+  width: 20%;
+  height: auto;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  animation: anim 20s infinite linear;
+}
+
+.slide-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   color: white;
+  background: rgba(0, 0, 0, 0.596);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-cover h1{
+  font-size: 100px;
+}
+
+
+
+
+@keyframes anim {
+  0%{
+    left: 0%;
+  }
+  10%{
+    left: 0%;
+  }
+  12%{
+    left: -100%;
+  }
+  22%{
+    left: -100%;
+  }
+  24%{
+    left: -200%;
+  }
+  34%{
+    left: -200%;
+  }
+  36%{
+    left: -300%;
+  }
+  46%{
+    left: -300%;
+  }
+  48%{
+    left: -400%;
+  }
+  58%{
+    left: -400%;
+  }
+  60%{
+    left: -300%;
+  }
+  70%{
+    left: -300%;
+  }
+  72%{
+    left: -200%;
+  }
+  82%{
+    left: -200%;
+  }
+  84%{
+    left: -100%;
+  }
+  94%{
+    left: -100%;
+  }
+  96%{
+    left: 0%;
+  }
 }
