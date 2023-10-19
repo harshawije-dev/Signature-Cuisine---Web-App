@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  margin: 0 auto;
+  background-color: #fc7753;
+}
+
+nav {
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #fc7753;
+  margin: 0 auto;
+}
+
+.nav-logo h1 {
+  font-family: "Dancing Script";
+  font-weight: bold;
+  font-size: 40px;
+  color: aliceblue;
+}
+
+.nav-right-section ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-right-section ul li {
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+.nav-right-section ul li a {
+  text-decoration: none;
+  color: white;
+}
