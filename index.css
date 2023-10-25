@@ -5,9 +5,9 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* html {
+html {
   scroll-behavior: smooth;
-} */
+}
 
 :root {
   --main-color: #ddeac1;
