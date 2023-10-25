@@ -548,3 +548,13 @@ footer {
   justify-content: center;
   color: rgba(255, 255, 255, 0.527);
 }
+
+.footer-copyright p a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.527);
+  transition: all 250ms;
+}
+
+.footer-copyright p a:hover{
+  color: white;
+}
