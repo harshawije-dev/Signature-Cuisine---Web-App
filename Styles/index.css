@@ -42,6 +42,8 @@ nav {
   height: 80px;
   background-color: var(--main-color);
   margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
 }
 
 .nav-logo h1 {
@@ -95,6 +97,15 @@ nav {
   font-size: 30px;
 }
 
+.nav-menu-icon {
+  margin-left: 10px;
+  display: none;
+  cursor: pointer;
+}
+
+.nav-menu-icon:hover {
+  color:rgb(255, 208, 0);
+}
 
 /* hover-styles-for-nav */
 
@@ -105,7 +116,7 @@ nav {
 }
 
 .underline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -122,16 +133,14 @@ nav {
   transform-origin: bottom left;
 }
 
-
-
-
 /* Sign-up-option-styles */
 
-.sign-up-menu{
+.sign-up-menu {
   width: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
   padding: 10px;
   background-color: var(--main-color);
   position: absolute;
@@ -146,14 +155,40 @@ nav {
   transition: all 250ms;
 }
 
-.sign-up-menu p:hover{
-  border-radius: 2px;
+.sign-up-menu p:hover {
   color: rgb(134, 134, 134);
 }
 
 
-.display-off{
-  display: none;
+
+
+/* mobile-responsive-menu-styles */
+
+.mobile-nav-section{
+  position: absolute;
+  background-color: var(--main-color);
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+  top: 80px;
+  right: -10px;
+}
+
+.mobile-nav-section ul{
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-section ul li{
+  margin: 10px 0;
+}
+
+.mobile-nav-section ul li a{
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--secondary-color);
 }
 
 
@@ -362,7 +397,6 @@ nav {
   transition: all 500ms;
   color: white;
 }
-
 
 /* review-section-styles */
 
@@ -627,6 +661,21 @@ footer {
   transition: all 250ms;
 }
 
-.footer-copyright p a:hover{
+.footer-copyright p a:hover {
   color: white;
+}
+
+.display-off {
+  display: none;
+}
+
+@media (max-width: 1320px) {
+  .nav-right-section {
+    display: none;
+  }
+
+  .nav-menu-icon {
+    margin-left: 10px;
+    display: inline;
+  }
 }
