@@ -104,7 +104,7 @@ nav {
 }
 
 .nav-menu-icon:hover {
-  color:rgb(255, 208, 0);
+  color: rgb(255, 208, 0);
 }
 
 /* hover-styles-for-nav */
@@ -159,12 +159,9 @@ nav {
   color: rgb(134, 134, 134);
 }
 
-
-
-
 /* mobile-responsive-menu-styles */
 
-.mobile-nav-section{
+.mobile-nav-section {
   position: absolute;
   background-color: var(--main-color);
   width: 150px;
@@ -176,21 +173,20 @@ nav {
   right: -10px;
 }
 
-.mobile-nav-section ul{
+.mobile-nav-section ul {
   display: flex;
   flex-direction: column;
 }
 
-.mobile-nav-section ul li{
+.mobile-nav-section ul li {
   margin: 10px 0;
 }
 
-.mobile-nav-section ul li a{
+.mobile-nav-section ul li a {
   text-decoration: none;
   font-size: 18px;
   color: var(--secondary-color);
 }
-
 
 /* main-slider-section */
 
@@ -320,6 +316,7 @@ nav {
 }
 
 .dishe {
+  margin: 0 auto;
   width: 400px;
   background-color: white;
   border-radius: 10px;
@@ -527,6 +524,8 @@ nav {
 
 .facilities-content {
   display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
   gap: 20px;
   max-width: 1280px;
   margin: 0 auto;
@@ -677,5 +676,16 @@ footer {
   .nav-menu-icon {
     margin-left: 10px;
     display: inline;
+  }
+
+  .popular-dishes-items {
+    width: 850px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content-top,
+  .content-bot {
+    grid-template-columns: 400px;
+    width: 620px;
   }
 }
