@@ -20,6 +20,7 @@ html {
 body {
   position: relative;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Nav-bar-section */
@@ -403,7 +404,9 @@ nav {
   margin: 0 auto;
   padding-top: 100px;
   margin-bottom: 200px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
 }
 
 .review-main-text {
@@ -437,13 +440,13 @@ nav {
 
 .first-dummy {
   position: absolute;
-  left: 200px;
+  left: 150px;
   box-shadow: 20px 5px 0px var(--main-color);
 }
 
 .second-dummy {
   position: absolute;
-  left: 400px;
+  left: 350px;
   top: 200px;
   box-shadow: -20px -5px 0px var(--main-color);
 }
@@ -451,7 +454,7 @@ nav {
 .third-dummy {
   position: absolute;
   bottom: 10px;
-  left: 200px;
+  left: 150px;
   box-shadow: -20px 5px 0px var(--main-color);
 }
 
@@ -580,6 +583,7 @@ nav {
 
 .same-content {
   padding: 10px;
+  margin: 0 auto;
 }
 
 /* footer-section */
@@ -687,5 +691,23 @@ footer {
   .content-bot {
     grid-template-columns: 400px;
     width: 620px;
+  }
+
+  .review-section {
+    grid-template-columns: 640px;
+  }
+
+  .review-right-section{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .first-dummy,
+  .second-dummy,
+  .third-dummy {
+    width:200px;
+    height: 200px;
+    position: static;
   }
 }
