@@ -10,8 +10,8 @@ html {
 }
 
 :root {
-  --main-color: #ddeac1;
-  --secondary-color: #494449;
+  --main-color: #E4E9EC;
+  --secondary-color: #875F59;
   --third-color: #eeefeb;
   --main-font: "Poppins", sans-serif;
   --Secondary-font: "Dancing Script";
@@ -23,6 +23,7 @@ body {
   height: 100vh;
   /* overflow-x: hidden; */
 }
+
 
 /* Nav-bar-section */
 
@@ -652,6 +653,7 @@ footer {
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.527);
+  margin-top: 20px;
 }
 
 .footer-copyright p a {

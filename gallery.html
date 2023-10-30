@@ -13,6 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="Styles/index.css">
     <link rel="stylesheet" href="Styles/gallery.css">
     <title>Signature Cuisine Resturant</title>
 </head>
@@ -28,17 +29,35 @@
             </div>
             <div class="nav-right-section">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="index.html#popular-dishes">Offers</a></li>
-                    <li><a href="index.html#facilities">Facilities</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li class="underline"><a href="index.html">Home</a></li>
+                    <li class="underline"><a href="gallery.html">Gallery</a></li>
+                    <li class="underline"><a href="menu.html">Menu</a></li>
+                    <li class="underline"><a href="index.html#popular-dishes">Offers</a></li>
+                    <li class="underline"><a href="index.html#facilities">Facilities</a></li>
+                    <li class="underline"><a href="#">About Us</a></li>
                 </ul>
             </div>
             <div class="login-section">
-                <a href="">Login <span class="material-symbols-outlined">
+                <p class="js-log-menu-btn">User<span class="material-symbols-outlined">
                         account_circle
-                    </span></a>
+                    </span></p>
+                <div class="sign-up-menu display-off js-login-menu">
+                    <p>Log In</p>
+                    <p>Sign Up</p>
+                </div>
+                <span class="material-symbols-outlined nav-menu-icon js-nav-toggle">
+                    menu
+                </span>
+            </div>
+            <div class="mobile-nav-section display-off js-mobile-nav">
+                <ul>
+                    <li class="underline"><a href="index.html">Home</a></li>
+                    <li class="underline"><a href="gallery.html">Gallery</a></li>
+                    <li class="underline"><a href="#">Menu</a></li>
+                    <li class="underline"><a href="#popular-dishes">Offers</a></li>
+                    <li class="underline"><a href="#facilities">Facilities</a></li>
+                    <li class="underline"><a href="#">About Us</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -67,6 +86,6 @@
             </div>
         </div>
     </main>
+    <script src="Js/script.js"></script>
 </body>
-
 </html>
