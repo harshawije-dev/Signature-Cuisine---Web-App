@@ -21,6 +21,7 @@ main {
 .menu-container {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .categories-title {
@@ -31,7 +32,8 @@ main {
 
 .menu-categories {
   margin-top: 10px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
 }
 
@@ -42,6 +44,7 @@ main {
   padding: 10px 20px;
   border-radius: 20px;
   transition: all 250ms;
+  text-align: center;
 }
 
 .menu-categories a:hover {
@@ -141,4 +144,33 @@ main {
 
 .category-gap {
   margin-top: 100px;
+}
+
+@media (max-width: 1320px) {
+  .item-list {
+    grid-template-columns: 300px 300px 300px;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .item-list {
+    grid-template-columns: 300px 300px;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 780px) {
+  .item-list {
+    grid-template-columns: 300px ;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .menu-categories{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
 }
