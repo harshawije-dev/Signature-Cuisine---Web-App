@@ -1,14 +1,14 @@
 <?php
 include('connection.php');
 if (isset($_POST['add_item'])) {
-    
+
     $item_name = $_POST['item_name'];
     $item_price = $_POST['item_price'];
     $item_description = $_POST['item_description'];
     $item_category = $_POST['item_category'];
     $item_image = $_FILES['item_image']['name'];
     $item_image_temp_name = $_FILES['item_image']['tmp_name'];
-    $item_image_folder = 'images/upload/item/'. $item_image;
+    $item_image_folder = 'images/upload/item/' . $item_image;
 
     $insert_query = mysqli_query($conn, "INSERT INTO `menu` (NAME,DESCRIPTION,IMAGE,PRICE,CATEGORY)
         VALUES('$item_name','$item_description','$item_image',' $item_price','$item_category')
@@ -16,7 +16,7 @@ if (isset($_POST['add_item'])) {
 
     if ($insert_query === TRUE) {
         move_uploaded_file($item_image_temp_name, $item_image_folder);
-        echo "Item added successfully!";
+        $display_message = "Item added successfully!";
     } else {
         echo "product entering error";
     }
@@ -42,7 +42,6 @@ if (isset($_POST['add_item'])) {
     <?php
     include('components/header.php');
     ?>
-
     <div class="dashboard-container">
         <div class="add-items-panel">
             <p class="panel-main-title">Add Item - Panel</p>
@@ -62,6 +61,19 @@ if (isset($_POST['add_item'])) {
                     <input name="add_item" type="submit" value="Add item">
                 </form>
             </div>
+            <div class="display-container">
+                <?php
+                if (isset($display_message)) {
+                    echo " 
+                <div class='display-message'>
+                <span>$display_message</span>
+                <span class='material-symbols-outlined cross' onclick='this.parentElement.style.display=`none`';> close </span>
+                </div>
+                ";
+                }
+                ?>
+            </div>
+
         </div>
     </div>
 
