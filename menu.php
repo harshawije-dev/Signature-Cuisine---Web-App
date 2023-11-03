@@ -25,12 +25,10 @@ $all_beverage_items = $conn->query($sql_beverage);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="Styles/index.css">
-    <link rel="stylesheet" href="Styles/menu.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/menu.css">
     <title>Menu</title>
 </head>
 
@@ -217,7 +215,7 @@ $all_beverage_items = $conn->query($sql_beverage);
             </div>
         </div>
     </main>
-    <script src="Js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

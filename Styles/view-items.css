@@ -1,0 +1,147 @@
+/* css main variables */
+:root {
+    --main-color: #E4E9EC;
+    --secondary-color: #875F59;
+    --third-color: #eeefeb;
+    --main-font: "Poppins", sans-serif;
+    --Secondary-font: "Dancing Script";
+    --mobile-font-size:40px;
+  }
+
+a {
+    text-decoration: none;
+}
+
+.view-item-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* table container */
+.outer-wrapper{
+    background-color:var(--main-color);
+    margin-top: 150px;
+    border-radius: 10px;
+    height: 700px;
+    overflow-y: scroll;
+    padding: 25px;
+}
+
+
+/* table with data */
+.inner-wrapper{
+    color: black;
+    margin:0 auto;
+    background-color: white;
+    border-radius: 10px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+
+
+table {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    font-weight: normal;
+}
+
+
+.inner-wrapper{
+    max-height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 20px;
+}
+
+th, td{
+    border: 1px solid var(--main-color);
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* .inner-wrapper thead{
+    position: sticky;
+    top: 0;
+}
+
+.inner-wrapper thead th{
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: var(--secondary-color);
+}
+
+.table-data{
+    text-align: center;
+
+} */
+
+.delete-icon{
+    color: red;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.edit-icon{
+    color: green;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.data-image{
+    height: 100px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Delete pop message styles */
+
+.delete-pop-up{
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.425);
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+
+.btn-section{
+    display: flex;
+    gap: 20px;
+}
+
+.btn{
+    font-weight: normal;
+    font-size: 18px;
+    width: 100px;
+}
+.btn:hover{
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.295);
+}
+
+.delete-yes-btn{
+    background-color: rgb(245, 76, 76);
+}
+
+.delete-no-btn{
+    background-color: rgb(63, 131, 63);
+}

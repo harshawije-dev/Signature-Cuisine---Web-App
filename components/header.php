@@ -8,8 +8,8 @@
         </div>
         <div class="nav-right-section">
             <ul>
-                <li class="underline"><a href="#">Add Items</a></li>
-                <li class="underline"><a href="#">View Items</a></li>
+                <li class="underline"><a href="adminPanel.php">Add Items</a></li>
+                <li class="underline"><a href="view-items.php">View Items</a></li>
             </ul>
         </div>
         <div class="login-section">
@@ -26,8 +26,8 @@
         </div>
         <div class="mobile-nav-section display-off js-mobile-nav">
             <ul>
-                <li class="underline"><a href="#">View Items</a></li>
-                <li class="underline"><a href="#">Add Items</a></li>
+                <li class="underline"><a href="adminPanel.php">View Items</a></li>
+                <li class="underline"><a href="view-items.php">Add Items</a></li>
             </ul>
         </div>
     </nav>

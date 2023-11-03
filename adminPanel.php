@@ -1,4 +1,6 @@
 <?php
+
+// database connection file
 include('connection.php');
 if (isset($_POST['add_item'])) {
 
