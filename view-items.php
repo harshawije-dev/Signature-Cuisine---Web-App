@@ -51,8 +51,8 @@ $all_items = mysqli_query($conn, "Select * from `menu`");
                                 <td class="table-data"><?php echo $row['PRICE'] ?></td>
                                 <td class="table-data"><?php echo $row['CATEGORY'] ?></td>
                                 <td class="table-data">
-                                    <a href="delete-item.php?delete=<?php echo $row['ITEM_ID'] ?>"><span class="material-symbols-outlined delete-icon "> delete </span></a>
-                                    <a href=""><span class="material-symbols-outlined edit-icon "> edit </span></a>
+                                    <a data-item-id="<?php echo $row['ITEM_ID'] ?>" class="js-item-delete-btn"  href="#"><span class="material-symbols-outlined delete-icon "> delete </span></a>
+                                    <a href="update-item.php?edit=<?php echo $row['ITEM_ID'] ?>"><span class="material-symbols-outlined edit-icon "> edit </span></a>
                                 </td>
                             </tr>
 
@@ -65,11 +65,11 @@ $all_items = mysqli_query($conn, "Select * from `menu`");
                 </tbody>
             </table>
         </div>
-        <div class="delete-pop-up">
-            <p>Are you want to delete this item ?</p>
+        <div class="delete-pop-up display-off js-delete-pop-up">
+            <p class="js-pop-up-message">Are you want to delete this item ?</p>
             <div class="btn-section">
-                <button class="btn delete-yes-btn">Yes</button>
-                <button class="btn delete-no-btn">No</button>
+                <button class="btn delete-yes-btn js-yes-btn">Yes</button>
+                <button class="btn delete-no-btn js-no-btn ">No</button>
             </div>
         </div>
     </div>
