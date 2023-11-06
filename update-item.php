@@ -69,7 +69,7 @@ if (isset($_POST['update_product'])) {
 </head>
 
 <body>
-
+    <?php include('components/header.php') ?>
     <main>
         <!-- main-container -->
         <div class="container">
