@@ -30,6 +30,7 @@ navToggleBtn.addEventListener("click", ()=>{
 //sign up password matching
 signUpBtn.addEventListener('click',(e)=>{
   if(!(newPw.value == comPw.value) ){
+    console.log('hknw')
     comPw.classList.add('error-outline')
     e.preventDefault();
   }

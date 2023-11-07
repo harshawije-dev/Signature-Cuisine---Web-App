@@ -22,16 +22,16 @@
                     <p class="common-logo">Signature Cuisine</p>
                     <p class="welcome-text">Welcome Back</p>
                     <p class="mini-text">Sign in with your email address and Password.</p>
-                    <form action="">
+                    <form action="backend/login-process.php" method="POST">
                         <div class="input-container">
                             <label for="">Email Address</label>
-                            <input type="email" placeholder="Enter your email address" required>
+                            <input type="email" placeholder="Enter your email address" required name="email">
                         </div>
                         <div class="input-container">
                             <label for="">Password</label>
-                            <input type="password" placeholder="Enter your password" required>
+                            <input type="password" placeholder="Enter your password" required name="password">
                         </div>
-                        <input class="form-sign-in-btn" type="submit" value="Sign In" ">
+                        <input class="form-sign-in-btn" type="submit" value="Sign In" name="login_btn">
                         <div class="sign-up-option">
                             <p>Don't have an account?</p>
                             <a href="sign-up.php">Sing Up</a>

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php include 'components/header.php' ?>
+    <?php include('components/header.php') ?>
     <main>
         <div class="login-container">
             <div class="container-left-side">
@@ -57,6 +57,12 @@
                         </div>
                 </div>
                 </form>
+                <?php
+                if (isset($_GET['error'])) {
+                    $message = $_GET['error'];
+                    echo '<div class="error-message" onclick="this.remove();">' . $message . '</div>';
+                }
+                ?>
             </div>
         </div>
     </main>

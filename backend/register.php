@@ -17,15 +17,23 @@ if (isset($_POST['register_btn'])) {
 
     //input fields validation
     if (inputValidate($fname, $lname, $email, $password, $cpassword)) {
-        header("location:../sign-up.php?error=empty_fields");
+        $error_text = "Please fill the input fields";
+        header("location:../sign-up.php?error='$error_text'");
+
     } else if (nameValidate($fname, $lname)) {
         header("location:../sign-up.php?error=invalid_name");
+        
     } else if (emailValidate($email)) {
         header("location:../sign-up.php?error=invalid_email");
+
     } else if (passwordValidate($password)) {
         header("location:../sign-up.php?error=invalid_password");
+
     } else if (emailAvailability($conn, $email)) {
-        header("location:../sign-up.php?error=already_used_email");
+
+        $error_text = "This email already in use";
+        header("location:../sign-up.php?error=$error_text");
+
     } else {
 
         // sanatizing other inputs
@@ -119,7 +127,7 @@ function passwordValidate($password)
 function emailAvailability($conn, $email)
 {
     $status = false;
-    $query = "SELECT * FROM customers WHERE email = '{$email}' LIMIT 1 ";
+    $query = "SELECT * FROM customers WHERE email = '$email' LIMIT 1 ";
     $result_set = mysqli_query($conn, $query);
 
     if ($result_set) {
@@ -131,10 +139,3 @@ function emailAvailability($conn, $email)
     }
     return $status;
 }
-
-
-// // // new user registation
-// function registerNewUser($fn, $ln, $mail, $pswd){
-    
-
-// }

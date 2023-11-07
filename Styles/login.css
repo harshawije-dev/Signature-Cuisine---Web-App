@@ -36,7 +36,7 @@ main {
 }
 
 .container-left-side{
-  height: 725px;
+  height: 750px;
 }
 
 .container-left-side img {
@@ -51,6 +51,7 @@ main {
   align-items: center;
   padding: 25px;
   background-color: var(--main-color);
+  position: relative;
 }
 
 .welcome-text{
@@ -100,7 +101,7 @@ label{
 
 .form-sign-in-btn{
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 90px;
   border: none;
   background-color: #91B93D;
   color: white;
@@ -119,4 +120,18 @@ label{
 
 .error-outline{
   box-shadow: 0px 0px 5px red;
+}
+
+/* error message styles */
+.error-message{
+  position: absolute;
+  bottom:20px;
+  height: 30px;
+  width: 250px;
+  background-color: var(--negative-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
