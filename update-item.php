@@ -15,9 +15,7 @@ if (isset($_GET['edit'])) {
 //update product logic
 if (isset($_POST['update_product'])) {
     $updated_id = $_POST['update_item_id'];
-    echo $updated_id;
     $updated_name = $_POST['update_item_name'];
-    echo $updated_name;
     $updated_price = $_POST['update_item_price'];
     $updated_description = $_POST['update_item_description'];
     $updated_category = $_POST['update_item_category'];

@@ -3,23 +3,51 @@ const navToggleBtn = document.querySelector(".js-nav-toggle");
 const deletePopUpBtn = document.querySelectorAll('.js-item-delete-btn');
 const deleteYesBtn = document.querySelector('.js-yes-btn');
 const deleteNoBtn = document.querySelector('.js-no-btn');
+const signUpBtn = document.querySelector('.js-sing-up-btn');
+
 
 const loginMenu = document.querySelector(".js-login-menu");
 const navMenu = document.querySelector(".js-mobile-nav");
 const deletePopUp = document.querySelector('.js-delete-pop-up');
-const popUpMessage = document.querySelector('.js-pop-up-message')
+const popUpMessage = document.querySelector('.js-pop-up-message');
+const newPw = document.getElementById("newPassword");
+const comPw = document.getElementById("confirmPassword");
+
 
 UserLoginBtn.addEventListener("click", () => {
   menuOpenCloser("display-off",loginMenu);
 });
 
 navToggleBtn.addEventListener("click", ()=>{
-    menuOpenCloser("display-off",navMenu)
+    menuOpenCloser("display-off",navMenu);
 });
 
 
 
-// delete using class
+
+
+
+//sign up password matching
+signUpBtn.addEventListener('click',(e)=>{
+  if(!(newPw.value == comPw.value) ){
+    comPw.classList.add('error-outline')
+    e.preventDefault();
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+// delete pop using class
 deletePopUpBtn.forEach((item)=>{
   item.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -41,17 +69,6 @@ deletePopUpBtn.forEach((item)=>{
 
   })
 })
-
-
-// update using class
-
-
-
-
-
-
-
-
 
 
 // toggle function
