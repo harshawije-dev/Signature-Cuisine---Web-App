@@ -1,12 +1,12 @@
 <?php
-include('connection.php');
+include('../includes/connection.php');
 
 // getting data get method
 if (isset($_GET['edit'])) {
     $edit_id = $_GET['edit'];
 
     // fetching data from db
-    $edit_query = mysqli_query($conn, "SELECT * FROM `menu` WHERE ITEM_ID=$edit_id") or die('Unable to connect to execute thequery');
+    $edit_query = mysqli_query($conn, "SELECT * FROM `items` WHERE ITEM_ID=$edit_id") or die('Unable to connect to execute thequery');
     $row = mysqli_fetch_assoc($edit_query);
 }
 
@@ -28,7 +28,7 @@ if (isset($_POST['update_product'])) {
     if (isset($_FILES['update_item_image']) && $_FILES['update_item_image']['error'] == 0) {
         $updated_image = $_FILES['update_item_image']['name'];
         $updated_image_tmpName = $_FILES['update_item_image']['tmp_name'];
-        $updated_image_folder = 'images/upload/item/' . $updated_image;
+        $updated_image_folder = '../assets/images/upload/item/' . $updated_image;
 
         // Move the uploaded image to the folder
         move_uploaded_file($updated_image_tmpName, $updated_image_folder);
@@ -40,11 +40,12 @@ if (isset($_POST['update_product'])) {
 
 
     // update query
-    $update_items = mysqli_query($conn, "UPDATE `menu` SET NAME='$updated_name', DESCRIPTION='$updated_description', 
+    $update_items = mysqli_query($conn, "UPDATE `items` SET NAME='$updated_name', DESCRIPTION='$updated_description', 
     IMAGE='$updated_image', PRICE='$updated_price', CATEGORY='$updated_category' WHERE ITEM_ID=$updated_id");
 
     if ($update_items) {
         echo "Item updated!";
+        header('location:view-items.php');
     } else {
         echo "update error";
     }
@@ -61,13 +62,13 @@ if (isset($_POST['update_product'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/update-item.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/update-item.css">
     <title>Update Item</title>
 </head>
 
 <body>
-    <?php include('components/header.php') ?>
+    <?php include('../includes/admin-header.php') ?>
     <main>
         <!-- main-container -->
         <div class="container">
@@ -79,7 +80,7 @@ if (isset($_POST['update_product'])) {
                 <!-- form -->
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="preview-item-image">
-                        <img src="images/upload/item/<?php echo $row['IMAGE'] ?>" alt="">
+                        <img src="../assets/images/upload/item/<?php echo $row['IMAGE'] ?>" alt="">
                     </div>
                     <div class="form-items">
                         <input type="hidden" name="update_item_id" value="<?php echo $row['ITEM_ID'] ?>">

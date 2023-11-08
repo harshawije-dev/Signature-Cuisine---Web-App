@@ -1,10 +1,11 @@
 <?php
-require_once "connection.php";
-$sql_pizza = "SELECT * FROM menu WHERE CATEGORY='pizza'";
-$sql_rice = "SELECT * FROM menu WHERE CATEGORY='rice'";
-$sql_burger = "SELECT * FROM menu WHERE CATEGORY='burger'";
-$sql_dessert = "SELECT * FROM menu WHERE CATEGORY='dessert'";
-$sql_beverage = "SELECT * FROM menu WHERE CATEGORY='beverage'";
+require_once "../includes/connection.php";
+
+$sql_pizza = "SELECT * FROM items WHERE CATEGORY='pizza'";
+$sql_rice = "SELECT * FROM items WHERE CATEGORY='rice'";
+$sql_burger = "SELECT * FROM items WHERE CATEGORY='burger'";
+$sql_dessert = "SELECT * FROM items WHERE CATEGORY='dessert'";
+$sql_beverage = "SELECT * FROM items WHERE CATEGORY='beverage'";
 
 $all_pizza_items = $conn->query($sql_pizza);
 $all_rice_items = $conn->query($sql_rice);
@@ -27,54 +28,13 @@ $all_beverage_items = $conn->query($sql_beverage);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
     <title>Menu</title>
 </head>
 
 <body>
-    <header id="navbar">
-        <nav>
-            <div class="nav-logo">
-                <h1>Signature Cuisine</h1>
-            </div>
-            <div class="nav-mid-section">
-
-            </div>
-            <div class="nav-right-section">
-                <ul>
-                    <li class="underline"><a href="index.html">Home</a></li>
-                    <li class="underline"><a href="gallery.html">Gallery</a></li>
-                    <li class="underline"><a href="#">Menu</a></li>
-                    <li class="underline"><a href="index.html#popular-dishes">Offers</a></li>
-                    <li class="underline"><a href="index.html#facilities">Facilities</a></li>
-                    <li class="underline"><a href="#">About Us</a></li>
-                </ul>
-            </div>
-            <div class="login-section">
-                <p class="js-log-menu-btn">User<span class="material-symbols-outlined">
-                        account_circle
-                    </span></p>
-                <div class="sign-up-menu display-off js-login-menu">
-                    <p>Log In</p>
-                    <p>Sign Up</p>
-                </div>
-                <span class="material-symbols-outlined nav-menu-icon js-nav-toggle">
-                    menu
-                </span>
-            </div>
-            <div class="mobile-nav-section display-off js-mobile-nav">
-                <ul>
-                    <li class="underline"><a href="index.html">Home</a></li>
-                    <li class="underline"><a href="gallery.html">Gallery</a></li>
-                    <li class="underline"><a href="#">Menu</a></li>
-                    <li class="underline"><a href="#popular-dishes">Offers</a></li>
-                    <li class="underline"><a href="#facilities">Facilities</a></li>
-                    <li class="underline"><a href="#">About Us</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <?php include('../includes/header.php') ?>
     <main>
         <p class="menu-main-title">Menu</p>
         <div class="menu-container">
@@ -95,7 +55,7 @@ $all_beverage_items = $conn->query($sql_beverage);
                         ?>
                             <div class="item">
                                 <div class="item-image">
-                                    <img src="images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
+                                    <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
                                 <div class="item-details">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
@@ -120,7 +80,7 @@ $all_beverage_items = $conn->query($sql_beverage);
                         ?>
                             <div class="item">
                                 <div class="item-image">
-                                    <img src="images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
+                                    <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
                                 <div class="item-details">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
@@ -145,7 +105,7 @@ $all_beverage_items = $conn->query($sql_beverage);
                         ?>
                             <div class="item">
                                 <div class="item-image">
-                                    <img src="images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
+                                    <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
                                 <div class="item-details">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
@@ -170,7 +130,7 @@ $all_beverage_items = $conn->query($sql_beverage);
                         ?>
                             <div class="item">
                                 <div class="item-image">
-                                    <img src="images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
+                                    <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
                                 <div class="item-details">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
@@ -195,7 +155,7 @@ $all_beverage_items = $conn->query($sql_beverage);
                         ?>
                             <div class="item">
                                 <div class="item-image">
-                                    <img src="images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
+                                    <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
                                 <div class="item-details">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
@@ -215,7 +175,7 @@ $all_beverage_items = $conn->query($sql_beverage);
             </div>
         </div>
     </main>
-    <script src="js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>

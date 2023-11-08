@@ -1,15 +1,25 @@
+<?php
+session_start();
+
+$customer_name;
+
+if (!isset($_SESSION['customer_email'])) {
+    $customer_name = "Login";
+} else {
+    $customer_name = $_SESSION['customer_fname'];
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="assets/css/index.css">
     <title>Signature Cuisine Resturant</title>
 </head>
 
@@ -17,25 +27,43 @@
     <header id="navbar">
         <nav>
             <div class="nav-logo">
-                <h1>Signature Cuisine</h1>
+                <a href="">Signature Cuisine</a>
             </div>
             <div class="nav-mid-section">
 
             </div>
             <div class="nav-right-section">
                 <ul>
-                    <li class="underline"><a href="index.html">Home</a></li>
-                    <li class="underline"><a href="gallery.html">Gallery</a></li>
-                    <li class="underline"><a href="menu.php">Menu</a></li>
+                    <li class="underline"><a href="index.php">Home</a></li>
+                    <li class="underline"><a href="pages/gallery.php">Gallery</a></li>
+                    <li class="underline"><a href="pages/menu.php">Menu</a></li>
                     <li class="underline"><a href="#popular-dishes">Offers</a></li>
                     <li class="underline"><a href="#facilities">Facilities</a></li>
                     <li class="underline"><a href="#">About Us</a></li>
                 </ul>
             </div>
             <div class="login-section">
-                <p class="js-log-menu-btn">User<span class="material-symbols-outlined">
+                
+                <!-- shopping cart  -->
+                <span class="material-symbols-outlined item-cart">shopping_cart</span>
+
+                <p class="js-log-menu-btn"><?php echo $customer_name ?><span class="material-symbols-outlined">
                         account_circle
                     </span></p>
+                <?php
+                //checking user logged or not
+                if (!isset($_SESSION['customer_email'])) {
+                    echo '  <div class="sign-up-menu display-off js-login-menu">
+                                    <a href="pages/login.php">Login</a>
+                                    <a href="pages/sign-up.php">Sign Up</a>
+                                </div>';
+                } else {
+                    echo '  <div class="sign-up-menu display-off js-login-menu">
+                                    <a href="#">Profile</a>
+                                    <a href="includes/log-out.php">Log Out</a>
+                                 </div>';
+                }
+                ?>
                 <div class="sign-up-menu display-off js-login-menu">
                     <p>Log In</p>
                     <p>Sign Up</p>
@@ -46,9 +74,9 @@
             </div>
             <div class="mobile-nav-section display-off js-mobile-nav">
                 <ul>
-                    <li class="underline"><a href="index.html">Home</a></li>
-                    <li class="underline"><a href="gallery.html">Gallery</a></li>
-                    <li class="underline"><a href="menu.html">Menu</a></li>
+                    <li class="underline"><a href="index.php">Home</a></li>
+                    <li class="underline"><a href="pages/gallery.html">Gallery</a></li>
+                    <li class="underline"><a href="pages/menu.php">Menu</a></li>
                     <li class="underline"><a href="#popular-dishes">Offers</a></li>
                     <li class="underline"><a href="#facilities">Facilities</a></li>
                     <li class="underline"><a href="#">About Us</a></li>
@@ -60,11 +88,11 @@
         <div class="image-slider">
             <div class="slider">
                 <figure>
-                    <img src="images/img1.jpeg" alt="">
-                    <img src="images/img2.jpg" alt="">
-                    <img src="images/img3.jpg" alt="">
-                    <img src="images/img4.jpg" alt="">
-                    <img src="images/img5.jpg" alt="">
+                    <img src="assets/images/img1.jpeg" alt="">
+                    <img src="assets/images/img2.jpg" alt="">
+                    <img src="assets/images/img3.jpg" alt="">
+                    <img src="assets/images/img4.jpg" alt="">
+                    <img src="assets/images/img5.jpg" alt="">
                 </figure>
                 <div class="slide-cover">
                     <h1>Welcome.</h1>
@@ -75,7 +103,7 @@
             <h1 class="main-titles"><span>Special Offers</span></h1>
             <div class="popular-dishes-items">
                 <div class="dishe">
-                    <img src="images/dishes/dishe1.jpg" alt="">
+                    <img src="assets/images/dishes/dishe1.jpg" alt="">
                     <p class="dishe-title">Pizza Margherita</p>
                     <p class="dishe-description">LA beloved Italian classic, the Pizza Margherita is a thin-crust pizza
                         topped with simple yet delicious ingredients: tomato sauce, fresh mozzarella cheese, fragrant
@@ -86,7 +114,7 @@
                     </div>
                 </div>
                 <div class="dishe">
-                    <img src="images/dishes/dishe2.jpg" alt="">
+                    <img src="assets/images/dishes/dishe2.jpg" alt="">
                     <p class="dishe-title">Sushi</p>
                     <p class="dishe-description">Sushi is a Japanese culinary masterpiece. It consists of vinegared rice
                         combined with various ingredients such as raw or cooked seafood, vegetables, and occasionally
@@ -97,7 +125,7 @@
                     </div>
                 </div>
                 <div class="dishe">
-                    <img src="images/dishes/dishe3.jpg" alt="">
+                    <img src="assets/images/dishes/dishe3.jpg" alt="">
                     <p class="dishe-title">Chicken Tikka Masala</p>
                     <p class="dishe-description">This British-Indian creation is a luscious dish where marinated and
                         grilled chicken pieces are simmered in a creamy tomato and spice-infused sauce. It's a perfect
@@ -107,7 +135,7 @@
                     </div>
                 </div>
                 <div class="dishe">
-                    <img src="images/dishes/dishe4.jpg" alt="">
+                    <img src="assets/images/dishes/dishe4.jpg" alt="">
                     <p class="dishe-title">Pad Thai</p>
                     <p class="dishe-description">Pad Thai is Thailand's renowned street food dish. It features
                         stir-fried rice noodles combined with shrimp or tofu, scrambled eggs, bean sprouts, peanuts, and
@@ -117,7 +145,7 @@
                     </div>
                 </div>
                 <div class="dishe">
-                    <img src="images/dishes/dishe5.jpg" alt="">
+                    <img src="assets/images/dishes/dishe5.jpg" alt="">
                     <p class="dishe-title">Devil Chicken Kottu</p>
                     <p class="dishe-description">Devil Chicken Kottu is a Sri Lankan street food favorite. This spicy
                         and flavorful dish features chopped roti (flatbread) stir-fried with a fiery chicken curry,
@@ -128,7 +156,7 @@
                     </div>
                 </div>
                 <div class="dishe">
-                    <img src="images/dishes/dishe6.jpg" alt="">
+                    <img src="assets/images/dishes/dishe6.jpg" alt="">
                     <p class="dishe-title">Biryani</p>
                     <p class="dishe-description">Biryani is a fragrant and flavorful South Asian dish, known for its
                         aromatic long-grain rice cooked with a blend of spices, herbs, and marinated chicken, lamb, or
@@ -140,7 +168,7 @@
                 </div>
             </div>
             <div class="more-dishes">
-                <button class="dishes-menu-btn btn" onclick="location.href='menu.php'" >Open Menu <span class="material-symbols-outlined arrow-icon">
+                <button class="dishes-menu-btn btn" onclick="location.href='pages/menu.php'">Open Menu <span class="material-symbols-outlined arrow-icon">
                         arrow_forward
                     </span></button>
             </div>
@@ -154,7 +182,7 @@
                 <div class="content-top">
                     <div class="content-top-left">
                         <div class="facility-image ">
-                            <img src="images/facilities/faci1.jpg" alt="">
+                            <img src="assets/images/facilities/faci1.jpg" alt="">
                         </div>
                         <div class="same-content">
                             <p class="facility-title">The Rustic Bistro Retreat</p>
@@ -166,7 +194,7 @@
                     </div>
                     <div class="content-top-right">
                         <div class="facility-image">
-                            <img src="images/facilities/faci2.jpg" alt="">
+                            <img src="assets/images/facilities/faci2.jpg" alt="">
 
                         </div>
                         <div class="same-content ">
@@ -188,7 +216,7 @@
                                 The sushi bar is the centerpiece, where expert chefs craft artistic rolls.</p>
                         </div>
                         <div class=" facility-image ">
-                            <img src="images/facilities/faci3.jpg" alt="">
+                            <img src="assets/images/facilities/faci3.jpg" alt="">
                         </div>
                     </div>
                     <div class="content-bot-right">
@@ -200,7 +228,7 @@
                                 and a live band that plays on weekends.</p>
                         </div>
                         <div class="facility-image ">
-                            <img src="images/facilities/faci4 (1).jpg" alt="">
+                            <img src="assets/images/facilities/faci4 (1).jpg" alt="">
                         </div>
                     </div>
 
@@ -230,10 +258,10 @@
                                 <p class="feedback-owner-name">
                                     Thanuja Fernando
                                 </p>
-                                <img class="feedback-rating" src="images/ratings/stars.png" alt="">
+                                <img class="feedback-rating" src="assets/images/ratings/stars.png" alt="">
                             </div>
                             <div class="double-quotes">
-                                <img src="images/ratings/quatation.png" alt="">
+                                <img src="assets/images/ratings/quatation.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -241,9 +269,9 @@
             </div>
             <div class="review-right-section">
                 <div class="review-dummy">
-                    <img src="images/customer/customer1.jpg" alt="" class="first-dummy">
-                    <img src="images/customer/customer2.jpg" alt="" class="second-dummy">
-                    <img src="images/customer/customer3.jpg" alt="" class="third-dummy">
+                    <img src="assets/images/customer/customer1.jpg" alt="" class="first-dummy">
+                    <img src="assets/images/customer/customer2.jpg" alt="" class="second-dummy">
+                    <img src="assets/images/customer/customer3.jpg" alt="" class="third-dummy">
                 </div>
             </div>
         </div>
@@ -254,10 +282,7 @@
             <div class="footer-left">
                 <p class="footer-main-text">Main Resturant - Colombo</p>
                 <div class="footer-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63381.7901781827!2d79.89956262912905!3d6.84714891223242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae251c093787a17%3A0xcd7254a31f81fa5!2sCuisine%20Colombo%20-%20Pelawatta!5e0!3m2!1sen!2slk!4v1698135971649!5m2!1sen!2slk"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63381.7901781827!2d79.89956262912905!3d6.84714891223242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae251c093787a17%3A0xcd7254a31f81fa5!2sCuisine%20Colombo%20-%20Pelawatta!5e0!3m2!1sen!2slk!4v1698135971649!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div class="footer-mid">
@@ -291,10 +316,8 @@
                                 email
                             </span>info@Signaturecuisine.com</a></li>
 
-                    <li><a href="#"><box-icon class="contact-icons" type='logo' name='facebook-circle' size='35px'
-                                color='white'></box-icon>SignatueCuisine/Facebook</a></li>
-                    <li><a href="#"><box-icon class="contact-icons" type='logo' name='instagram' size='35px'
-                                color='white'></box-icon>SignatueC_Offical/Instagram</a></li>
+                    <li><a href="#"><box-icon class="contact-icons" type='logo' name='facebook-circle' size='35px' color='white'></box-icon>SignatueCuisine/Facebook</a></li>
+                    <li><a href="#"><box-icon class="contact-icons" type='logo' name='instagram' size='35px' color='white'></box-icon>SignatueC_Offical/Instagram</a></li>
                 </ul>
             </div>
         </div>
@@ -303,7 +326,7 @@
         </div>
     </footer>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

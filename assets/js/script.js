@@ -3,15 +3,14 @@ const navToggleBtn = document.querySelector(".js-nav-toggle");
 const deletePopUpBtn = document.querySelectorAll('.js-item-delete-btn');
 const deleteYesBtn = document.querySelector('.js-yes-btn');
 const deleteNoBtn = document.querySelector('.js-no-btn');
-const signUpBtn = document.querySelector('.js-sing-up-btn');
+
 
 
 const loginMenu = document.querySelector(".js-login-menu");
 const navMenu = document.querySelector(".js-mobile-nav");
 const deletePopUp = document.querySelector('.js-delete-pop-up');
 const popUpMessage = document.querySelector('.js-pop-up-message');
-const newPw = document.getElementById("newPassword");
-const comPw = document.getElementById("confirmPassword");
+
 
 
 UserLoginBtn.addEventListener("click", () => {
@@ -21,28 +20,6 @@ UserLoginBtn.addEventListener("click", () => {
 navToggleBtn.addEventListener("click", ()=>{
     menuOpenCloser("display-off",navMenu);
 });
-
-
-
-
-
-
-//sign up password matching
-signUpBtn.addEventListener('click',(e)=>{
-  if(!(newPw.value == comPw.value) ){
-    console.log('hknw')
-    comPw.classList.add('error-outline')
-    e.preventDefault();
-  }
-})
-
-
-
-
-
-
-
-
 
 
 
@@ -58,7 +35,7 @@ deletePopUpBtn.forEach((item)=>{
       popUpMessage.innerText =`Are you want to delete this item(${itemId}) ?`;
 
       deleteYesBtn.addEventListener('click',()=>{
-        window.location.href = `delete-item.php?delete=${itemId}`;
+        window.location.href = `../pages/delete-item.php?delete=${itemId}`;
       })
 
       deleteNoBtn.addEventListener('click',()=>{
@@ -94,3 +71,17 @@ let currentScrollPos = window.pageYOffset;
   prevScrollpos = currentScrollPos;
 }
 
+
+
+const newPw = document.getElementById("newPassword");
+const comPw = document.getElementById("confirmPassword");
+const signUpBtn = document.querySelector('.js-sing-up-btn');
+
+//sign up password matching
+signUpBtn.addEventListener('click',(e)=>{
+  if(!(newPw.value == comPw.value) ){
+    console.log('hknw')
+    comPw.classList.add('error-outline')
+    e.preventDefault();
+  }
+})

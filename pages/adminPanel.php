@@ -1,7 +1,7 @@
 <?php
 
 // database connection file
-include('connection.php');
+include('../includes/connection.php');
 if (isset($_POST['add_item'])) {
 
     $item_name = $_POST['item_name'];
@@ -10,9 +10,9 @@ if (isset($_POST['add_item'])) {
     $item_category = $_POST['item_category'];
     $item_image = $_FILES['item_image']['name'];
     $item_image_temp_name = $_FILES['item_image']['tmp_name'];
-    $item_image_folder = 'images/upload/item/' . $item_image;
+    $item_image_folder = '../assets/images/upload/item/' . $item_image;
 
-    $insert_query = mysqli_query($conn, "INSERT INTO `menu` (NAME,DESCRIPTION,IMAGE,PRICE,CATEGORY)
+    $insert_query = mysqli_query($conn, "INSERT INTO `items` (NAME,DESCRIPTION,IMAGE,PRICE,CATEGORY)
         VALUES('$item_name','$item_description','$item_image',' $item_price','$item_category')
         ") or die("Item inserting failed!");
 
@@ -35,14 +35,14 @@ if (isset($_POST['add_item'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="Styles/index.css">
-    <link rel="stylesheet" href="Styles/adminPanel.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/adminPanel.css">
     <title>Admin Panel</title>
 </head>
 
 <body>
     <?php
-    include('components/header.php');
+    include('../includes/admin-header.php');
     ?>
     <div class="dashboard-container">
         <div class="add-items-panel">
@@ -79,7 +79,7 @@ if (isset($_POST['add_item'])) {
         </div>
     </div>
 
-    <script src="Js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>

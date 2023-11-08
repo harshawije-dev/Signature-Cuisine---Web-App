@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="Styles/index.css">
-        <link rel="stylesheet" href="Styles/login.css">
-        <title>Login Page</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <title>Login Page</title>
 </head>
 
 <body>
-    <?php include('components/header.php') ?>
+    <?php include('../includes/header.php') ?>
     <main>
         <div class="login-container">
             <div class="container-left-side">
-                <img src="images/common/login_side_image.jpg" alt="">
+                <img src="../assets/images/common/login_side_image.jpg" alt="">
             </div>
             <div class="container-right-side">
                 <div>
                     <p class="common-logo">Signature Cuisine</p>
                     <p class="welcome-text">Welcome to our resturant</p>
                     <p class="mini-text">Sign Up with your email address and Password.</p>
-                    <form action="backend/register.php" method="post">
+                    <form action="register.php" method="post">
                         <div class="name-input-container ">
                             <div class="input-container">
                                 <label for="">First name</label>
@@ -66,7 +64,7 @@
             </div>
         </div>
     </main>
-    <script src="js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>
