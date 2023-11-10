@@ -57,17 +57,23 @@ $all_beverage_items = $conn->query($sql_beverage);
                                 <div class="item-image">
                                     <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
-                                <div class="item-details">
+                                <form class="item-details" action="cart-process.php" method="POST">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
+
+                                    <input type="hidden" name=item_name value="<?php echo $row["NAME"] ?>">
+                                    <input type="hidden" name=item_price value="<?php echo $row["PRICE"] ?>">
+                                    <input type="hidden" name=item_image value="<?php echo $row["IMAGE"] ?>">
+        
+
                                     <p class="item-description"> <?php echo $row["DESCRIPTION"] ?> </p>
                                     <div class="item-price-and-qt">
                                         <div class="item-price"><?php echo "Rs." . $row["PRICE"] ?></div>
                                         <div class="item-quantity">
-                                            <span>QTY </span><input type="number" name="quantity" min="1" max="15">
+                                            <span>QTY </span><input type="number" name="item_quantity" min="1" max="15">
                                         </div>
                                     </div>
-                                    <button class="add-to-order-btn">Add to Order</button>
-                                </div>
+                                    <input type="submit"  name="add_to_cart" class="add-to-order-btn" value="Add to Order">
+                                </form>
                             </div>
                         <?php } ?>
                     </div>
@@ -82,17 +88,22 @@ $all_beverage_items = $conn->query($sql_beverage);
                                 <div class="item-image">
                                     <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
-                                <div class="item-details">
+                                <form class="item-details" action="cart-process.php" method="POST">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
+
+                                    <input type="hidden" name=item_name value="<?php echo $row["NAME"] ?>">
+                                    <input type="hidden" name=item_price value="<?php echo $row["PRICE"] ?>">
+                                    <input type="hidden" name=item_image value="<?php echo $row["IMAGE"] ?>">
+
                                     <p class="item-description"> <?php echo $row["DESCRIPTION"] ?> </p>
                                     <div class="item-price-and-qt">
                                         <div class="item-price"><?php echo "Rs." . $row["PRICE"] ?></div>
                                         <div class="item-quantity">
-                                            <span>QTY </span><input type="number" name="quantity" min="1" max="15">
+                                            <span>QTY </span><input type="number" name="item_quantity" min="1" max="15">
                                         </div>
                                     </div>
-                                    <button class="add-to-order-btn">Add to Order</button>
-                                </div>
+                                    <input type="submit"  name="add_to_cart" class="add-to-order-btn" value="Add to Order">
+                                </form>
                             </div>
                         <?php } ?>
                     </div>
@@ -107,17 +118,22 @@ $all_beverage_items = $conn->query($sql_beverage);
                                 <div class="item-image">
                                     <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
-                                <div class="item-details">
+                                <form class="item-details" action="cart-process.php" method="POST">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
+
+                                    <input type="hidden" name=item_name value="<?php echo $row["NAME"] ?>">
+                                    <input type="hidden" name=item_price value="<?php echo $row["PRICE"] ?>">
+                                    <input type="hidden" name=item_image value="<?php echo $row["IMAGE"] ?>">
+
                                     <p class="item-description"> <?php echo $row["DESCRIPTION"] ?> </p>
                                     <div class="item-price-and-qt">
                                         <div class="item-price"><?php echo "Rs." . $row["PRICE"] ?></div>
                                         <div class="item-quantity">
-                                            <span>QTY </span><input type="number" name="quantity" min="1" max="15">
+                                            <span>QTY </span><input type="number" name="item_quantity" min="1" max="15">
                                         </div>
                                     </div>
-                                    <button class="add-to-order-btn">Add to Order</button>
-                                </div>
+                                    <input type="submit"  name="add_to_cart" class="add-to-order-btn" value="Add to Order">
+                                </form>
                             </div>
                         <?php } ?>
                     </div>
@@ -132,17 +148,22 @@ $all_beverage_items = $conn->query($sql_beverage);
                                 <div class="item-image">
                                     <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
-                                <div class="item-details">
+                                <form class="item-details" action="cart-process.php" method="POST">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
+
+                                    <input type="hidden" name=item_name value="<?php echo $row["NAME"] ?>">
+                                    <input type="hidden" name=item_price value="<?php echo $row["PRICE"] ?>">
+                                    <input type="hidden" name=item_image value="<?php echo $row["IMAGE"] ?>">
+
                                     <p class="item-description"> <?php echo $row["DESCRIPTION"] ?> </p>
                                     <div class="item-price-and-qt">
                                         <div class="item-price"><?php echo "Rs." . $row["PRICE"] ?></div>
                                         <div class="item-quantity">
-                                            <span>QTY </span><input type="number" name="quantity" min="1" max="15">
+                                            <span>QTY </span><input type="number" name="item_quantity" min="1" max="15">
                                         </div>
                                     </div>
-                                    <button class="add-to-order-btn">Add to Order</button>
-                                </div>
+                                    <input type="submit"  name="add_to_cart" class="add-to-order-btn" value="Add to Order">
+                                </form>
                             </div>
                         <?php } ?>
                     </div>
@@ -157,17 +178,22 @@ $all_beverage_items = $conn->query($sql_beverage);
                                 <div class="item-image">
                                     <img src="../assets/images/upload/item/<?php echo $row["IMAGE"] ?>" alt="">
                                 </div>
-                                <div class="item-details">
+                                <form class="item-details" action="cart-process.php" method="POST">
                                     <p class="item-name"><?php echo $row["NAME"] ?></p>
+
+                                    <input type="hidden" name=item_name value="<?php echo $row["NAME"] ?>">
+                                    <input type="hidden" name=item_price value="<?php echo $row["PRICE"] ?>">
+                                    <input type="hidden" name=item_image value="<?php echo $row["IMAGE"] ?>">
+
                                     <p class="item-description"> <?php echo $row["DESCRIPTION"] ?> </p>
                                     <div class="item-price-and-qt">
                                         <div class="item-price"><?php echo "Rs." . $row["PRICE"] ?></div>
                                         <div class="item-quantity">
-                                            <span>QTY </span><input type="number" name="quantity" min="1" max="15">
+                                            <span>QTY </span><input type="number" name="item_quantity" min="1" max="15">
                                         </div>
                                     </div>
-                                    <button class="add-to-order-btn">Add to Order</button>
-                                </div>
+                                    <input type="submit"  name="add_to_cart" class="add-to-order-btn" value="Add to Order">
+                                </form>
                             </div>
                         <?php } ?>
                     </div>

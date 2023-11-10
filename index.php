@@ -1,15 +1,21 @@
 <?php
 session_start();
-
 $customer_name;
+$cart_item_count;
 
 if (!isset($_SESSION['customer_email'])) {
     $customer_name = "Login";
 } else {
     $customer_name = $_SESSION['customer_fname'];
+    if (isset($_SESSION['cart_items'])) {
+        $cart_item_count = $_SESSION['cart_items'];
+    } else {
+        $cart_item_count = 0;
+    }
 }
-?>
 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,9 +49,16 @@ if (!isset($_SESSION['customer_email'])) {
                 </ul>
             </div>
             <div class="login-section">
-                
+
                 <!-- shopping cart  -->
-                <span class="material-symbols-outlined item-cart">shopping_cart</span>
+                <?php
+                //checking user logged or not
+                if (!isset($_SESSION['customer_email'])) {
+                    echo '<a href="pages/login.php"><span class="material-symbols-outlined item-cart">shopping_cart</span></a>';
+                } else {
+                    echo '<a href="pages/checkout.php"><span class="material-symbols-outlined item-cart">shopping_cart</span> <span class="cart_item_count">' . $cart_item_count . '</span>  </a>';
+                }
+                ?>
 
                 <p class="js-log-menu-btn"><?php echo $customer_name ?><span class="material-symbols-outlined">
                         account_circle

@@ -39,6 +39,13 @@ a {
   position: relative;
 }
 
+/* .cart-head-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: var;
+} */
+
 table {
   border: 1px solid white;
   border-collapse: collapse;
@@ -70,22 +77,7 @@ td {
   text-align: center;
 }
 
-/* .inner-wrapper thead{
-    position: sticky;
-    top: 0;
-}
 
-.inner-wrapper thead th{
-    padding: 10px 25px;
-    font-size: 18px;
-    font-weight: normal;
-    background-color: var(--secondary-color);
-}
-
-.table-data{
-    text-align: center;
-
-} */
 
 .delete-icon {
   color: var(--negative-color);

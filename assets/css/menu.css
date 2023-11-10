@@ -133,6 +133,7 @@ main {
   padding: 10px 0;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
 }
 
 .item-quantity input[type="number"] {

@@ -45,6 +45,7 @@ if (isset($_POST['login_btn'])) {
                 //check pswds togather
                 if ($check_pswd) {
                     session_start();
+                    $_SESSION['customer_id'] = $row['customer_id'];
                     $_SESSION["customer_fname"] = $row['first_name'];
                     $_SESSION["customer_lname"] = $row['last_name'];
                     $_SESSION["customer_email"] = $row['email'];

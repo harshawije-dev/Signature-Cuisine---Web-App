@@ -90,7 +90,18 @@ nav {
 }
 
 
-.item-cart{
+.cart_item_count{
+  position: absolute;
+  background-color: var(--secondary-color);
+  width: 20px;
+  height: 20px;
+  color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  top: 14px;
+  left: 15px;
 }
 
 

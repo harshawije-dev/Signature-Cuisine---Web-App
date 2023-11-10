@@ -46,7 +46,7 @@ if (isset($_POST['add_item'])) {
     ?>
     <div class="dashboard-container">
         <div class="add-items-panel">
-            <p class="panel-main-title">Add Item</p>
+            <p class="panel-main-title cart-head-title">Add Item</p>
             <div class="add-panel">
                 <form action="" method="POST" enctype="multipart/form-data">
                     <input name="item_name" type="text" placeholder="Enter Item Name" required>

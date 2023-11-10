@@ -9,12 +9,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../assets/css/index.css">
-    <title>Menu</title>
+    <link rel="stylesheet" href="../assets/css/admin-staff-login.css">
+    <title>Admin Login</title>
 </head>
 
 <body>
     <?php include('../includes/header.php') ?>
-
+    <main>
+        <div class="container">
+            <div class="login-cart">
+                <div class="admin-icon">
+                    <span class="material-symbols-outlined">
+                        shield_person
+                    </span>
+                </div>
+                <form action="" class="admin-login-form">
+                    <input type="text" placeholder="Admin Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="submit" class="admin-login-btm" value="Login">
+                </form>
+            </div>
+        </div>
+    </main>
 
     <script src="../assets/js/script.js"></script>
 </body>
