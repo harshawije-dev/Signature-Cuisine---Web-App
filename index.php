@@ -110,7 +110,11 @@ if (!isset($_SESSION['customer_email'])) {
                     <img src="assets/images/img5.jpg" alt="">
                 </figure>
                 <div class="slide-cover">
-                    <h1>Welcome.</h1>
+                    <p>Welcome to Signature Cuisine<br><span class="second-line" >Where Every Bite Is a Masterpiece!</span></p>
+                    <a href="pages/reservation.php" class="reservation-btn">
+                        Reservation 
+                        <span class="material-symbols-outlined reserv-arrow">arrow_forward</span>
+                    </a>
                 </div>
             </div>
         </div>
