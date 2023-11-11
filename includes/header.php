@@ -32,7 +32,7 @@ if (!isset($_SESSION['customer_email'])) {
                 <li class="underline"><a href="menu.php">Menu</a></li>
                 <li class="underline"><a href="../index.php#popular-dishes">Offers</a></li>
                 <li class="underline"><a href="../index.php#facilities">Facilities</a></li>
-                <li class="underline"><a href="#">About Us</a></li>
+                <li class="underline"><a href="about.php">About Us</a></li>
             </ul>
         </div>
         <div class="login-section">

@@ -45,7 +45,7 @@ if (!isset($_SESSION['customer_email'])) {
                     <li class="underline"><a href="pages/menu.php">Menu</a></li>
                     <li class="underline"><a href="#popular-dishes">Offers</a></li>
                     <li class="underline"><a href="#facilities">Facilities</a></li>
-                    <li class="underline"><a href="#">About Us</a></li>
+                    <li class="underline"><a href="pages/about.php">About Us</a></li>
                 </ul>
             </div>
             <div class="login-section">
@@ -94,7 +94,7 @@ if (!isset($_SESSION['customer_email'])) {
                     <li class="underline"><a href="pages/menu.php">Menu</a></li>
                     <li class="underline"><a href="#popular-dishes">Offers</a></li>
                     <li class="underline"><a href="#facilities">Facilities</a></li>
-                    <li class="underline"><a href="#">About Us</a></li>
+                    <li class="underline"><a href="pages/about.php">About Us</a></li>
                 </ul>
             </div>
         </nav>
