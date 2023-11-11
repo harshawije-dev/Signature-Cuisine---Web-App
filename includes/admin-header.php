@@ -26,6 +26,7 @@ if (!isset($_SESSION['admin_username'])) {
                 <li class="underline"><a href="../pages/adminPanel.php">Add Items</a></li>
                 <li class="underline"><a href="../pages/view-items.php">View Items</a></li>
                 <li class="underline"><a href="../pages/view-orders.php">View Orders</a></li>
+                <li class="underline"><a href="../pages/view-reservations.php">View Reservations</a></li>
             </ul>
         </div>
         <div class="login-section">
@@ -57,6 +58,7 @@ if (!isset($_SESSION['admin_username'])) {
                 <li class="underline"><a href="../pages/adminPanel.php">View Items</a></li>
                 <li class="underline"><a href="../pages/view-items.php">Add Items</a></li>
                 <li class="underline"><a href="../pages/view-orders.php">View Orders</a></li>
+                <li class="underline"><a href="../pages/view-reservations.php">View Reservations</a></li>
             </ul>
         </div>
     </nav>

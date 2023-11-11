@@ -25,6 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .reservation-card {
@@ -81,4 +82,18 @@ input {
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 40px;
+}
+
+
+.error-message{
+  position: absolute;
+  top: 40px;
+  height: 50px;
+  width: 250px;
+  background-color: var(--happy-yellow);
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }

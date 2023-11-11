@@ -67,9 +67,18 @@
                         </form>
                     </div>
                 </div>
+
+                <!-- display message -->
+                <?php
+                if (isset($_GET['msg'])) {
+                    $message = $_GET['msg'];
+                    echo '<div class="error-message" onclick="this.remove();">' . $message . '</div>';
+                }
+                ?>
             </div>
         </div>
     </main>
+    <?php include('../includes/header.php') ?>
     <script src="../assets/js/script.js"></script>
 </body>
 </html>
