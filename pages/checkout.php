@@ -1,6 +1,5 @@
 <?php
 include('../includes/connection.php');
-
 ?>
 
 
@@ -23,6 +22,12 @@ include('../includes/connection.php');
 
    <?php
    include('../includes/header.php');
+
+   //restrict unauthorized users to access;
+   if (!isset($_SESSION['customer_email'])) {
+      header("location:../index.php");
+   }
+
    $customer_id = $_SESSION['customer_id'];
    ?>
 
@@ -46,6 +51,7 @@ include('../includes/connection.php');
                   <?php
                   $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE customer_id = '$customer_id'") or die('query failed');
                   $grand_total = 0;
+                  $sub_total = 0;
 
 
 
@@ -89,13 +95,37 @@ include('../includes/connection.php');
          </div>
 
          <!-- grand total -->
-         <div class="cart-btn">
-            <a href="#" class="<?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">
+         <div class="cart-btn" >
+            <button  class="<?php echo ($grand_total > 1) ? '' : 'disabled'; ?>"  onclick="openPaymentCard()">
                Proceed to Checkout
                <span class="material-symbols-outlined">shopping_cart_checkout </span>
-            </a>
+            </button>
          </div>
       </div>
+
+
+      <!-- Payment modal -->
+      <div class="checkout-payment-cart js-payment-card" >
+         <span class="cart-close-icon material-symbols-outlined" onclick="this.parentElement.style.display='none'" `> close</span>
+         <form action="cart-process.php" class="payment-content" method="POST">
+            <div class="grand-total-content">
+               <p class="grand-total-title">Grand Total</p>
+               <p class="payment-cart-total">Rs.<?php echo $grand_total; ?>/-</p>
+               <input type="hidden" name="grand_total" value=" <?php echo $grand_total ?>" >
+            </div>
+            <label for="payment-options">Payment Methods</label>
+            <select name="payment_type" id="payment-options">
+               <option value="Credit/Debit Card">Credit/Debit Card</option>
+               <option value="Cash On Deliver">Cash On Deliver</option>
+               <option value="Take Away">Take Away</option>
+            </select>
+            <input type="submit"  value="Place Order"  name="place_order" class="place-order-btn">
+         </form>
+      </div>
+      <!-- Payment modal end-->
+
+
+
    </main>
 
    <script src="../assets/js/script.js"></script>

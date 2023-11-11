@@ -85,3 +85,8 @@ signUpBtn.addEventListener('click',(e)=>{
     e.preventDefault();
   }
 })
+
+
+function openPaymentCard(){
+  document.querySelector('.js-payment-card').style.display = 'block';
+}

@@ -2,6 +2,7 @@
 include('../includes/connection.php');
 session_start();
 $customer_id = $_SESSION['customer_id'];
+$customer_name = $_SESSION["customer_fname"];
 
 if (isset($customer_id)) {
 
@@ -32,10 +33,6 @@ if (isset($customer_id)) {
     }
 
 
-
-
-
-
     //update cart item
     if (isset($_POST['update_cart'])) {
         $update_quantity = $_POST['cart_quantity'];
@@ -58,11 +55,58 @@ if (isset($customer_id)) {
 
 
     //delete all items from cart
-    if(isset($_GET['delete_all'])){
+    if (isset($_GET['delete_all'])) {
         mysqli_query($conn, "DELETE FROM `cart` WHERE customer_id = '$customer_id'") or die('query failed');
         $_SESSION['cart_items'] = 0;
         header('location:checkout.php');
-     }
+    }
+
+
+
+
+    //placing order functionality
+    if (isset($_POST['place_order'])) {
+
+        $payment_type = $_POST['payment_type'];
+        $grand_total = $_POST['grand_total'];
+
+        // Fetch items from the cart
+        $cart_query = mysqli_query($conn, "SELECT * FROM cart WHERE customer_id = '$customer_id'");
+        $ordered_items = [];
+
+
+        while ($fetchCart = mysqli_fetch_assoc($cart_query)) {
+            $ordered_items[] = [
+                'item_name' => $fetchCart['name'],
+                'quantity' => $fetchCart['quantity'],
+            ];
+        }
+
+
+        // Serialize the ordered items
+        $serialized_items = serialize($ordered_items);
+
+
+        // Insert the order details into the orders table
+        $insert_order_query = "INSERT INTO orders (customer_id, customer_name, payment_type, grand_total, other_details) VALUES 
+        ('$customer_id', '$customer_name', '$payment_type', '$grand_total', '$serialized_items')";
+
+        $result = mysqli_query($conn, $insert_order_query);
+
+        if ($result) {
+            // Clear the cart or perform other actions if needed
+            mysqli_query($conn, "DELETE FROM `cart` WHERE customer_id = '$customer_id'");
+
+            header("location:menu.php"); // Redirect to a success page
+            exit();
+
+        }
+        else {
+            // Handle the case where the order insertion fails
+            echo "Error inserting order: " . mysqli_error($conn);
+        }
+
+    }
 
 
 } else {

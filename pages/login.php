@@ -41,6 +41,14 @@
                 </form>
                 <!-- admin-login-btn -->
                 <a class="admin-login-menu" href="admin-login.php">Admin Login <span class="material-symbols-outlined"> login</span> </a>
+                
+                <!-- dispay login error -->
+                <?php
+                if (isset($_GET['error'])) {
+                    $message = $_GET['error'];
+                    echo '<div class="error-message" onclick="this.remove();">' . $message . '</div>';
+                }
+                ?>
             </div>
         </div>
     </main>

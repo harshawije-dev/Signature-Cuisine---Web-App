@@ -201,6 +201,9 @@ $all_beverage_items = $conn->query($sql_beverage);
             </div>
         </div>
     </main>
+
+     <!-- footer -->
+     <?php include('../includes/footer.php'); ?>
     <script src="../assets/js/script.js"></script>
 </body>
 

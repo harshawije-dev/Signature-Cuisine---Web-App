@@ -7,7 +7,7 @@ require_once '../includes/validations.php';
 //check submition
 if (isset($_POST['login_btn'])) {
 
-    //check username and password field are empty
+    //sanatizing inputs
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
@@ -53,12 +53,12 @@ if (isset($_POST['login_btn'])) {
                     header("location:../index.php");
                 } else {
 
-                    $error_text = "hutta";
+                    $error_text ="Invalid Password";
                     header("location:login.php?error=$error_text");
                     exit();
                 }
             } else {
-                $error_text = "Wrong email";
+                $error_text = "Invalid email";
                 header("location:login.php?error=$error_text");
                 exit();
             }

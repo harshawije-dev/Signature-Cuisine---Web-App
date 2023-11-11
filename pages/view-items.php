@@ -23,6 +23,7 @@ $all_items = mysqli_query($conn, "Select * from `items`");
     <!-- header section -->
     <?php include('../includes/admin-header.php') ?>
     <div class="view-item-container">
+        <p class="item-list-title">Item - List</p>
         <div class="outer-wrapper">
             <table class="inner-wrapper">
                 <thead>
@@ -73,7 +74,9 @@ $all_items = mysqli_query($conn, "Select * from `items`");
             </div>
         </div>
     </div>
+
+    <!-- footer -->
+    <?php include('../includes/footer.php'); ?>
     <script src="../assets/js/script.js"></script>
 </body>
-
 </html>

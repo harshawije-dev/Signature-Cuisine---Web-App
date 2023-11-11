@@ -7,12 +7,10 @@ if (!isset($_SESSION['customer_email'])) {
     $customer_name = "Login";
 } else {
     $customer_name = $_SESSION['customer_fname'];
-    if(isset($_SESSION['cart_items'])){
-        $cart_item_count = $_SESSION['cart_items'];
-    }
-    else {
-        $cart_item_count = 0;
-    }
+
+    include('util-functions.php');
+    $cart_item_count = updateCart();
+   
 }
 
 

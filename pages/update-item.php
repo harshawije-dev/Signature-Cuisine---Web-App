@@ -108,5 +108,4 @@ if (isset($_POST['update_product'])) {
         </div>
     </main>
 </body>
-
 </html>

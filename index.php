@@ -56,6 +56,8 @@ if (!isset($_SESSION['customer_email'])) {
                 if (!isset($_SESSION['customer_email'])) {
                     echo '<a href="pages/login.php"><span class="material-symbols-outlined item-cart">shopping_cart</span></a>';
                 } else {
+                    include('includes/util-functions.php');
+                    $cart_item_count = updateCart();
                     echo '<a href="pages/checkout.php"><span class="material-symbols-outlined item-cart">shopping_cart</span> <span class="cart_item_count">' . $cart_item_count . '</span>  </a>';
                 }
                 ?>

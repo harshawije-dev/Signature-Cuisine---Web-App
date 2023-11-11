@@ -17,21 +17,31 @@
     <?php include('../includes/header.php') ?>
     <main>
         <div class="container">
+            <p class="panel-title">Admin Login Panel</p>
             <div class="login-cart">
                 <div class="admin-icon">
                     <span class="material-symbols-outlined">
                         shield_person
                     </span>
                 </div>
-                <form action="" class="admin-login-form">
-                    <input type="text" placeholder="Admin Username" required>
-                    <input type="password" placeholder="Password" required>
-                    <input type="submit" class="admin-login-btm" value="Login">
+                <form action="admin-login-process.php" class="admin-login-form" method="POST">
+                    <input type="email" placeholder="Admin Username" required name="admin_username">
+                    <input type="password" placeholder="Password" required name="admin_password">
+                    <input type="submit" class="admin-login-btn" value="Login" name="admin_login_btn">
                 </form>
             </div>
+
+            <!-- admin login error display -->
+            <?php
+            if (isset($_GET['error'])) {
+                $message = $_GET['error'];
+                echo '<div class="error-message" onclick="this.remove();">' . $message . '</div>';
+            }
+            ?>
+
         </div>
     </main>
-
+    <?php include('../includes/footer.php'); ?>
     <script src="../assets/js/script.js"></script>
 </body>
 

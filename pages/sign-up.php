@@ -55,6 +55,8 @@
                         </div>
                 </div>
                 </form>
+
+                <!-- display sing up error -->
                 <?php
                 if (isset($_GET['error'])) {
                     $message = $_GET['error'];
@@ -64,6 +66,9 @@
             </div>
         </div>
     </main>
+    
+     <!-- footer -->
+     <?php include('../includes/footer.php'); ?>
     <script src="../assets/js/script.js"></script>
 </body>
 

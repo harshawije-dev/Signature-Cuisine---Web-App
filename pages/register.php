@@ -23,13 +23,16 @@ if (isset($_POST['register_btn'])) {
         header("location:sign-up.php?error='$error_text'");
 
     } else if (nameValidate($fname, $lname)) {
-        header("location:sign-up.php?error=invalid_name");
+        $error_text = "Enter Valid Names";
+        header("location:sign-up.php?error=$error_text");
         
     } else if (emailValidate($email)) {
-        header("location:sign-up.php?error=invalid_email");
+        $error_text = "Enter Valid Email";
+        header("location:sign-up.php?error=$error_text");
 
     } else if (passwordValidate($password)) {
-        header("location:sign-up.php?error=invalid_password");
+        $error_text = "Enter Valid Password";
+        header("location:sign-up.php?error=$error_text");
 
     } else if (emailAvailability($conn, $email)) {
 
@@ -60,7 +63,7 @@ if (isset($_POST['register_btn'])) {
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
 
-            $error_text = "Successfuly";
+            $error_text = "Account Created : Please LogIn :)";
             header("location:login.php?error=$error_text");
         }
         
