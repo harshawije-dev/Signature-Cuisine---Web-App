@@ -9,7 +9,7 @@ if(isset($_POST['add_reservation'])){
     $phone =  mysqli_real_escape_string($conn, $_POST['phone_number']);
     $guests =  mysqli_real_escape_string($conn, $_POST['guests']);
 
-    $sql = "INSERT INTO reservation (name, email, phone, date, time, guests) VALUES ('$name', '$email', '$phone', '$date', '$time', $guests)";
+    $sql = "INSERT INTO reservation (name, email, phone, date, time, guests) VALUES ('$name', '$email', '$phone', '$date', '$time', '$guests')";
 
     if ($conn->query($sql) === TRUE) {
         $msg = "Reservation successful!";

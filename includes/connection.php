@@ -11,9 +11,7 @@ $conn = new mysqli($servername, $username, $password, $db_name);
 if (!$conn) {
     die('Could not connect' . mysqli_errno($conn));
 }
-// else {
-//     echo "Connected !";
-// }
+
 
 
 

@@ -202,8 +202,7 @@ $all_beverage_items = $conn->query($sql_beverage);
         </div>
     </main>
 
-     <!-- footer -->
-     <?php include('../includes/footer.php'); ?>
+    <!-- js file linked -->
     <script src="../assets/js/script.js"></script>
 </body>
 

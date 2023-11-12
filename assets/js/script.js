@@ -77,6 +77,9 @@ const newPw = document.getElementById("newPassword");
 const comPw = document.getElementById("confirmPassword");
 const signUpBtn = document.querySelector('.js-sing-up-btn');
 
+
+
+
 //sign up password matching
 signUpBtn.addEventListener('click',(e)=>{
   if(!(newPw.value == comPw.value) ){
@@ -90,3 +93,6 @@ signUpBtn.addEventListener('click',(e)=>{
 function openPaymentCard(){
   document.querySelector('.js-payment-card').style.display = 'block';
 }
+
+
+

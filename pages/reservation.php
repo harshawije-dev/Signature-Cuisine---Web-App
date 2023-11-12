@@ -28,12 +28,12 @@
                             <div class="input-couple">
                                 <div class="input-element">
                                     <label for="">Enter Your Name</label>
-                                    <input type="text" placeholder="Enter Your Name" name="name" >
+                                    <input type="text" placeholder="Enter Your Name" name="name"  required>
                                 </div>
 
                                 <div class="input-element">
                                     <label for="">Enter Your Email</label>
-                                    <input type="email" placeholder="Enter Your Email" name="email">
+                                    <input type="email" placeholder="Enter Your Email" name="email" required>
                                 </div>
 
                             </div>
@@ -41,24 +41,24 @@
                             <div class="input-couple">
                                 <div class="input-element">
                                     <label for="">Enter Date</label>
-                                    <input type="date" placeholder="Enter Date" name="date" >
+                                    <input type="date" placeholder="Enter Date" name="date" required >
                                 </div>
 
                                 <div class="input-element">
                                     <label for="">Enter Time</label>
-                                    <input type="Time" placeholder="Enter Time" name="time">
+                                    <input type="Time" placeholder="Enter Time" name="time" required>
                                 </div>
                             </div>
 
                             <div class="input-couple">
                                 <div class="input-element">
                                     <label for="">Enter Your Phone Number</label>
-                                    <input type="tel" placeholder="Enter Phone Number"  name="phone_number">
+                                    <input type="tel" placeholder="Enter Phone Number"  name="phone_number" required>
                                 </div>
 
                                 <div class="input-element">
                                     <label for="">Number of Guests</label>
-                                    <input type="number" placeholder="Number of Guests" name="guests">
+                                    <input type="number" placeholder="Number of Guests" name="guests" required>
                                 </div>
                             </div>
 
@@ -78,7 +78,7 @@
             </div>
         </div>
     </main>
-    <?php include('../includes/header.php') ?>
+    <?php include('../includes/footer.php') ?>
     <script src="../assets/js/script.js"></script>
 </body>
 </html>

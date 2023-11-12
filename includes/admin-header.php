@@ -1,15 +1,14 @@
 <?php
 session_start();
-$admin_name;
+$user_name;
 
-
-
-if (!isset($_SESSION['admin_username'])) {
-    $admin_name = "Login";
+if (isset($_SESSION['admin_username'])) {
+    $user_name = $_SESSION['admin_username'];
+} else if (isset($_SESSION['staff_username'])) {
+    $user_name = $_SESSION['staff_username'];
 } else {
-    $admin_name = $_SESSION['admin_username'];
+    $user_name = "Login";
 }
-
 ?>
 
 
@@ -23,31 +22,48 @@ if (!isset($_SESSION['admin_username'])) {
         </div>
         <div class="nav-right-section">
             <ul>
-                <li class="underline"><a href="../pages/adminPanel.php">Add Items</a></li>
-                <li class="underline"><a href="../pages/view-items.php">View Items</a></li>
-                <li class="underline"><a href="../pages/view-orders.php">View Orders</a></li>
-                <li class="underline"><a href="../pages/view-reservations.php">View Reservations</a></li>
+                <?php
+                if (isset($_SESSION['admin_username'])) {
+                ?>
+                    <li class="underline"><a href="../pages/adminPanel.php">Add Items</a></li>
+                    <li class="underline"><a href="../pages/view-items.php">View Items</a></li>
+                    <li class="underline"><a href="../pages/view-orders.php">View Orders</a></li>
+                    <li class="underline"><a href="../pages/view-reservations.php">View Reservations</a></li>
+
+                <?php
+                } else if (isset($_SESSION['staff_username'])) {
+                ?>
+                    <li class="underline"><a href="../pages/view-items.php">View Items</a></li>
+                    <li class="underline"><a href="../pages/view-orders.php">View Orders</a></li>
+                    <li class="underline"><a href="../pages/view-reservations.php">View Reservations</a></li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
         <div class="login-section">
-            <p class="js-log-menu-btn"><?php echo $admin_name ?><span class="material-symbols-outlined">
+
+            <p class="js-log-menu-btn"><?php echo $user_name ?><span class="material-symbols-outlined">
                     account_circle
                 </span></p>
-            <?php
 
-            //checking user logged or not
-            if (!isset($_SESSION['admin_username'])) {
-                echo '  <div class="sign-up-menu display-off js-login-menu">
-                                    <a href="login.php">Login</a>
-                                    <a href="sign-up.php">Sign Up</a>
-                                </div>';
+
+
+            <?php
+            // checking user logged or not
+            if (isset($_SESSION['admin_username']) || isset($_SESSION['staff_username'])) {
+                echo '<div class="sign-up-menu display-off js-login-menu">
+              <a href="#">Profile</a>
+              <a href="../includes/log-out.php">Log Out</a>
+          </div>';
             } else {
-                echo '  <div class="sign-up-menu display-off js-login-menu">
-                                    <a href="#">Profile</a>
-                                    <a href="../includes/log-out.php">Log Out</a>
-                                 </div>';
+                echo '<div class="sign-up-menu display-off js-login-menu">
+              <a href="login.php">Login</a>
+              <a href="sign-up.php">Sign Up</a>
+          </div>';
             }
             ?>
+
 
             <span class="material-symbols-outlined nav-menu-icon js-nav-toggle">
                 menu
@@ -55,10 +71,23 @@ if (!isset($_SESSION['admin_username'])) {
         </div>
         <div class="mobile-nav-section display-off js-mobile-nav">
             <ul>
-                <li class="underline"><a href="../pages/adminPanel.php">View Items</a></li>
-                <li class="underline"><a href="../pages/view-items.php">Add Items</a></li>
-                <li class="underline"><a href="../pages/view-orders.php">View Orders</a></li>
-                <li class="underline"><a href="../pages/view-reservations.php">View Reservations</a></li>
+                <?php
+                if (isset($_SESSION['admin_username'])) {
+                ?>
+                    <li class="underline"><a href="../pages/adminPanel.php">Add Items</a></li>
+                    <li class="underline"><a href="../pages/view-items.php">View Items</a></li>
+                    <li class="underline"><a href="../pages/view-orders.php">View Orders</a></li>
+                    <li class="underline"><a href="../pages/view-reservations.php">View Reservations</a></li>
+
+                <?php
+                } else if (isset($_SESSION['staff_username'])) {
+                ?>
+                    <li class="underline"><a href="../pages/view-items.php">View Items</a></li>
+                    <li class="underline"><a href="../pages/view-orders.php">View Orders</a></li>
+                    <li class="underline"><a href="../pages/view-reservations.php">View Reservations</a></li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
     </nav>

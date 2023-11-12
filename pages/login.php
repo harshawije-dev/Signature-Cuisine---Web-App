@@ -41,6 +41,9 @@
                 </form>
                 <!-- admin-login-btn -->
                 <a class="admin-login-menu" href="admin-login.php">Admin Login <span class="material-symbols-outlined"> login</span> </a>
+
+                <!-- staff-login-btn -->
+                <a class="admin-login-menu staff" href="staff-login.php">Staff Login <span class="material-symbols-outlined"> login</span> </a>
                 
                 <!-- dispay login error -->
                 <?php

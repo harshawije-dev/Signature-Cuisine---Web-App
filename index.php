@@ -110,14 +110,24 @@ if (!isset($_SESSION['customer_email'])) {
                     <img src="assets/images/img5.jpg" alt="">
                 </figure>
                 <div class="slide-cover">
-                    <p>Welcome to Signature Cuisine<br><span class="second-line" >Where Every Bite Is a Masterpiece!</span></p>
+                    <p>Welcome to Signature Cuisine<br><span class="second-line">Where Every Bite Is a Masterpiece!</span></p>
                     <a href="pages/reservation.php" class="reservation-btn">
-                        Reservation 
+                        Reservation
                         <span class="material-symbols-outlined reserv-arrow">arrow_forward</span>
                     </a>
+
                 </div>
             </div>
+
+            <!-- search-items-component -->
+            <div class="search-container">
+                <form action="pages/search-process.php">
+                    <input type="text" id="search" placeholder="Search your favorite items here" name="search">
+                    <input type="submit" value="Search" name="search_add" class="item-search-btn">
+                </form>
+            </div>
         </div>
+
         <div id="popular-dishes">
             <h1 class="main-titles"><span>Special Offers</span></h1>
             <div class="popular-dishes-items">
@@ -344,6 +354,7 @@ if (!isset($_SESSION['customer_email'])) {
             <p>Developed by <a href="https://github.com/iamthanuj">Thanuja Fernando</a></p>
         </div>
     </footer>
+
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
