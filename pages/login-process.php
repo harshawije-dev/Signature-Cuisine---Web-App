@@ -63,7 +63,7 @@ if (isset($_POST['login_btn'])) {
                 exit();
             }
         }
-        //closing stmt
+
         mysqli_stmt_close($stmt);
     }
 } else {

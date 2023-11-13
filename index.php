@@ -74,15 +74,12 @@ if (!isset($_SESSION['customer_email'])) {
                                 </div>';
                 } else {
                     echo '  <div class="sign-up-menu display-off js-login-menu">
-                                    <a href="#">Profile</a>
+                                    <a href="pages/profile.php">Profile</a>
                                     <a href="includes/log-out.php">Log Out</a>
                                  </div>';
                 }
                 ?>
-                <div class="sign-up-menu display-off js-login-menu">
-                    <p>Log In</p>
-                    <p>Sign Up</p>
-                </div>
+                
                 <span class="material-symbols-outlined nav-menu-icon js-nav-toggle">
                     menu
                 </span>
