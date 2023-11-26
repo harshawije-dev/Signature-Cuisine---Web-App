@@ -733,6 +733,57 @@ footer {
   display: none;
 }
 
+
+
+/* search bar styles */
+.search-container {
+  text-align: center;
+  width: 700px;
+  background-color: white;
+  height: 100px;
+  border-radius: 10px;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px var(--happy-yellow);
+}
+
+.search-container form {
+  display: flex;
+  gap: 10px;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.item-search-btn {
+  border: none;
+  background-color: var(--happy-yellow);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#search {
+  font-size: 18px;
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  border: 2px solid var(--happy-yellow);
+  border-radius: 5px;
+}
+
+
+
+
+
+
 @media (max-width: 1320px) {
   .slide-cover h1 {
     font-size: 80px;
@@ -780,6 +831,11 @@ footer {
   .footer-container {
     grid-template-columns: 1fr 300px;
   }
+
+  .search-container{
+    width: 500px;
+  }
+
 }
 
 @media (max-width: 880px) {
@@ -787,8 +843,9 @@ footer {
     font-size: 40px;
   }
 
-  .nav-logo h1 {
-    font-size: 30px;
+  .nav-logo a {
+    font-size: 25px;
+    text-wrap: balance;
   }
 
   .nav-right-section {
@@ -799,6 +856,16 @@ footer {
     margin-left: 10px;
     display: inline;
   }
+
+
+
+ .slide-cover p, .second-line {
+  font-size: 30px;
+  padding: 0px 10px;
+ }
+
+ 
+
 
   /* .popular-dishes-section */
 
@@ -892,48 +959,12 @@ footer {
     row-gap: 20px;
     justify-content: center;
   }
+
+  .search-container{
+    width: 300px;
+    height: 80px;
+  }
+
 }
 
-/* search bar styles */
-.search-container {
-  text-align: center;
-  width: 700px;
-  background-color: white;
-  height: 100px;
-  border-radius: 10px;
-  z-index: 101;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0px 0px 10px var(--happy-yellow);
-}
 
-.search-container form {
-  display: flex;
-  gap: 10px;
-  width: 90%;
-  justify-content: space-between;
-}
-
-.item-search-btn {
-  border: none;
-  background-color: var(--happy-yellow);
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#search {
-  font-size: 18px;
-  width: 100%;
-  padding: 5px;
-  outline: none;
-  border: 2px solid var(--happy-yellow);
-  border-radius: 5px;
-}
